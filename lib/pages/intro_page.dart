@@ -1,3 +1,5 @@
+import 'package:ecommerce/main.dart';
+import 'package:ecommerce/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -15,6 +17,7 @@ class IntroPage extends StatelessWidget {
             horizontal: 25.0,
           ),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
                 padding: const EdgeInsets.all(25.0),
@@ -48,22 +51,30 @@ class IntroPage extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey[900],
-                  borderRadius: BorderRadius.circular(12),
+              GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomePage(),
+                  ),
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.all(25.0),
-                  child: Center(
-                      child: Text(
-                    "Shop Now",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  )),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.grey[900],
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.all(25.0),
+                    child: Center(
+                        child: Text(
+                      "Shop Now",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                  ),
                 ),
               )
             ],
