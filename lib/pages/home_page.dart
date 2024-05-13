@@ -45,15 +45,68 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       drawer: Drawer(
-        backgroundColor: Colors.grey[900],
+        backgroundColor: Colors.black,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            DrawerHeader(
-              child: Image.asset(
-                "lib/images/logo3.jpeg",
-                color: Colors.white,
-              ),
-            )
+            Column(
+              children: [
+                DrawerHeader(
+                  child: Image.asset(
+                    "lib/images/logo5.png",
+                    width: 100,
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Divider(
+                    color: Colors.grey,
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(left: 25.0),
+                  child: ListTile(
+                      leading: Icon(
+                        Icons.home,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        "Home",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      )),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(left: 25.0),
+                  child: ListTile(
+                      leading: Icon(
+                        Icons.info,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        "About",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      )),
+                ),
+              ],
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 25.0, bottom: 25),
+              child: ListTile(
+                  leading: Icon(
+                    Icons.logout,
+                    color: Colors.white,
+                  ),
+                  title: Text(
+                    "Logout",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  )),
+            ),
           ],
         ),
       ),
